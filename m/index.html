@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>简历</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper-container" id="swiper-container">
+    <div class="swiper-wrapper">
+        <div tempId="p1" class="swiper-slide p1">
+            <div class="whirl">
+                <img src="./images/a.png" alt=""/>
+                <div class="photo"></div>
+            </div>
+            <div class="intro">
+                <p class="name">Hi,我是<span>XXX</span></p>
+                <p class="position">求职意向:前端工程师</p>
+                <p class="dash"></p>
+            </div>
+        </div>
+        <div tempId="p2" class="swiper-slide p2">
+            <div class="skill"><span>技能</span></div>
+            <div class="skill1">js</div>
+            <div class="skill2">react.js</div>
+            <div class="skill3">vue.js</div>
+            <div class="skill4">angular.js</div>
+        </div>
+        <div tempId="p3" class="swiper-slide p3">
+            <div class="me">
+                <div class="aboutme">关于我</div>
+                <ul>
+                    <li class="myname">姓名:XX</li>
+                    <li class="sex">性别:男</li>
+                    <li class="place">籍贯:湖北</li>
+                    <li class="school">毕业院校:武汉科技大学</li>
+                </ul>
+            </div>
+            <div class="fav">
+                <p>工作之外</p>
+                <div>
+                    <img class="book" src="images/book.jpg" alt=""/>
+                    <img class="football" src="./images/fav1.png" alt=""/>
+                    <img class="bike" src="./images/bike.jpg" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div tempId="p4" class="swiper-slide p4">
+            <p class="exp">工作履历</p>
+            <div class="exp3">
+                <img src="./images/foot.png" alt=""/>
+                <ul>
+                    <li>2013.5-2016.2</li>
+                    <li>XX公司</li>
+                    <li>工程师</li>
+                </ul>
+            </div>
+            <div class="exp2">
+                <img src="./images/footr.png" alt=""/>
+                <ul>
+                    <li>2010.1-2012.12</li>
+                    <li>XX公司</li>
+                    <li>工程师</li>
+                </ul>
+            </div>
+            <div class="exp1">
+                <img src="./images/foot.png" alt=""/>
+                <ul>
+                    <li>2008.7-2009.12</li>
+                    <li>XX公司</li>
+                    <li>工程师</li>
+                </ul>
+            </div>
+        </div>
+        <div tempId="p5" class="swiper-slide p5">
+            <dl>
+                <dt class="title">老板,求约!</dt>
+                <dd class="phone"><img src="./images/phone.png" alt=""/>15272239782</dd>
+                <dd class="qq"><img src="./images/qq.jpg" alt=""/>112852250</dd>
+                <dd class="er"><img src="./images/er.jpg" alt=""/></dd>
+            </dl>
+        </div>
+    </div>
+    <img src="images/icon_up.png" alt="" class="swiper-button-next arrow-up pt-page-moveIconUp">
+</div>
+<div class="audio">
+    <audio class="audioMp3" src="audio/bgm.mp3" loop preload="none"></audio>
+</div>
+<script src="swiper.js"></script>
+<script src="fastClick.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script>
+    FastClick.attach(document.body);
+</script>
+</body>
+</html>
