@@ -43,7 +43,7 @@ ul{list-style: none}
      height: 100%;
  }
 
-#p1 .whirl .bg{
+#p1 .whirl img{
     animation: meRotate 2s linear infinite;
     -webkit-animation: meRotate 2s linear infinite;
 }
