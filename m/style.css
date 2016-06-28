@@ -1,16 +1,22 @@
 *{
     margin: 0;
     padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 }
-ul{list-style: none}
 html,body {
+    -webkit-user-select: none;
     height: 100%;
     background:#000;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: .14rem;
     overflow: hidden;
     }
-html{font-size: 100px}
+html{
+    -webkit-text-size-adjust: none;
+    /*font-size: 100px*/
+}
+ul{list-style: none}
 .swiper-container {
     position: relative;
     margin: 0 auto;
@@ -28,17 +34,18 @@ html{font-size: 100px}
     position: absolute;
     top: 15%;
     left: 50%;
-    margin-left: -2.5rem;
-    width: 5rem;
-    height:5rem;
+    margin-left: -1.5rem;
+    width: 3rem;
+    height:3rem;
 }
  .p1 .whirl img{
      width: 100%;
      height: 100%;
  }
-#p1 .whirl img{
-    animation: meRotate 1s linear infinite;
-    -webkit-animation: meRotate 1s linear infinite;
+
+#p1 .whirl .bg{
+    animation: meRotate 2s linear infinite;
+    -webkit-animation: meRotate 2s linear infinite;
 }
  @keyframes meRotate {
      0%{
@@ -50,14 +57,15 @@ html{font-size: 100px}
  }
  .p1 .whirl .photo{
      position: absolute;
-     top:15%;
+     top:14%;
      left: 50%;
-     margin-left:-1.5rem;
+     margin-left:-1.1rem;
      border: .1rem solid #ffff00;
      border-radius: 50%;
-     width: 3rem;
-     height: 3rem;
-     background: url(images/me.jpg) no-repeat center center;
+     width: 2rem;
+     height: 2rem;
+     background: url("images/me.jpg")no-repeat center;
+     background-size: 2rem 2rem;
  }
  .p1 .intro{
      position: absolute;
@@ -104,7 +112,7 @@ html{font-size: 100px}
     animation-fill-mode: both;
 }
  .p1 .intro span{
-     font-size: 24px;
+     font-size: .24rem;
  }
  /*name animation*/
  @keyframes zoomIn {
@@ -203,7 +211,7 @@ html{font-size: 100px}
     line-height: 4rem;
     text-align: center;
     border-radius: .4rem;
-    font-size: 32px;
+    font-size: .32rem;
     font-weight: 600;
     color: #FFFFFF;
 }
@@ -228,10 +236,10 @@ html{font-size: 100px}
         transform: rotateY(0deg);
     }
     45%{
-        transform:translateZ(120px) rotateY(145deg);
+        transform:translateZ(1.2rem) rotateY(145deg);
     }
     90%{
-        transform:translateZ(150px) rotateY(360deg);
+        transform:translateZ(1.5rem) rotateY(360deg);
     }
 }
 @-webkit-keyframes skillMove {
@@ -239,10 +247,10 @@ html{font-size: 100px}
         -webkit-transform: rotateY(0deg) ;
     }
     45%{
-        transform:translateZ(120px) rotateY(145deg);
+        transform:translateZ(1.2rem) rotateY(145deg);
     }
     90%{
-        -webkit-transform:translateZ(150px) rotateY(360deg) ;
+        -webkit-transform:translateZ(1.5rem) rotateY(360deg) ;
     }
 }
 .p2 .skill1{
@@ -280,7 +288,7 @@ html{font-size: 100px}
     height: 3rem;
     line-height: 1rem;
     text-align: center;
-    font-size:32px;
+    font-size:.32rem;
     font-weight: bold;
     color: #FFFFFF;
     background: #ff5500;
@@ -290,11 +298,11 @@ html{font-size: 100px}
     left: .8rem;
 }
 .p3 ul li{
-    margin-top: 4px;
-    padding-left: 5px;
+    margin-top: .04rem;
+    padding-left:.05rem;
     height: 1rem;
     width: 5rem;
-    font-size: 24px;
+    font-size: .24rem;
     font-weight: bold;
     color: #FFFFFF;
     line-height: 1rem;
@@ -314,9 +322,13 @@ html{font-size: 100px}
     position: absolute;
     top:-35%;
     left: -38%;
-    width: 2.5rem;
+    padding-left: .5rem;
+    width: 2rem;
+    height: .6rem;
+    line-height: .6rem;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: .32rem;
+    letter-spacing: .05rem;
     color: #FFFFFF;
     font-weight: bold;
     background: #ff5500;
@@ -441,67 +453,67 @@ html{font-size: 100px}
 
 @-webkit-keyframes flipInX {
     from {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, 90deg);
         -webkit-animation-timing-function: ease-in;
         animation-timing-function: ease-in;
         opacity: 0;
     }
 
     40% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, -20deg);
         -webkit-animation-timing-function: ease-in;
         animation-timing-function: ease-in;
     }
 
     60% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, 10deg);
         opacity: 1;
     }
 
     80% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, -5deg);
     }
 
     to {
-        -webkit-transform: perspective(400px);
-        transform: perspective(400px);
+        -webkit-transform: perspective(4rem);
+        transform: perspective(4rem);
     }
 }
 
 @keyframes flipInX {
     from {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, 90deg);
         -webkit-animation-timing-function: ease-in;
         animation-timing-function: ease-in;
         opacity: 0;
     }
 
     40% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, -20deg);
         -webkit-animation-timing-function: ease-in;
         animation-timing-function: ease-in;
     }
 
     60% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, 10deg);
         opacity: 1;
     }
 
     80% {
-        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        -webkit-transform: perspective(4rem) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(4rem) rotate3d(1, 0, 0, -5deg);
     }
 
     to {
-        -webkit-transform: perspective(400px);
-        transform: perspective(400px);
+        -webkit-transform: perspective(4rem);
+        transform: perspective(4rem);
     }
 }
 
@@ -522,7 +534,7 @@ html{font-size: 100px}
 }
 .p4{
     position: relative;
-    font-size: 20px;
+    font-size: .2rem;
     color: #676767;
 }
 .p4 div{opacity: 0;}
@@ -561,7 +573,7 @@ html{font-size: 100px}
     position: absolute;
     top: 1rem;
     left: 2rem;
-    font-size: 32px;
+    font-size: .32rem;
     font-weight: bold;
 }
 .p4 ul{
@@ -609,7 +621,7 @@ html{font-size: 100px}
     border-bottom: .08rem solid #FFFFFF;
     line-height: 1.5rem;
     width: 6rem;
-    font-size: 32px;
+    font-size: .32rem;
     font-weight: bold;
 }
 .p5 .phone,.p5 .qq{
@@ -619,7 +631,7 @@ html{font-size: 100px}
     padding-left: .2rem;
     width: 4rem;
     line-height: 1rem;
-    font-size: 20px;
+    font-size: .2rem;
     text-align: center;
 }
 .p5 .phone{
