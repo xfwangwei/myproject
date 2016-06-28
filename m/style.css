@@ -180,7 +180,7 @@ ul{list-style: none}
  }
 
 .p2 .skill{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     margin-left: -1.1rem;
@@ -203,19 +203,20 @@ ul{list-style: none}
     text-align: center;
     line-height: 2rem;
     transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
 }
 .p2 .skill1,.p2 .skill2,.p2 .skill3,.p2 .skill4{
     position: absolute;
     width: 2.5rem;
-    height: 4rem;
-    line-height: 4rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
     text-align: center;
     border-radius: .4rem;
     font-size: .32rem;
     font-weight: 600;
     color: #FFFFFF;
 }
-#p2{transform-style: preserve-3d}
+/*#p2{transform-style: preserve-3d}*/
 #p2 .skill1,#p2 .skill2,#p2 .skill3,#p2 .skill4{
     -webkit-animation: skillMove 1s;
     animation: skillMove 1s;
@@ -554,7 +555,7 @@ ul{list-style: none}
 .p4 .exp2{
     position:absolute;
     right: .5rem;
-    bottom: 4rem;
+    bottom: 3rem;
 }
 .p4 .exp2 img{
     float: right;
@@ -562,7 +563,7 @@ ul{list-style: none}
 .p4 .exp1{
     position:absolute;
     left: .5rem;
-    top: 3rem;
+    top: 4rem;
 }
 .p4 img{
     float: left;
@@ -725,13 +726,13 @@ ul{list-style: none}
 }
 .p5 .er{
     position: absolute;
-    left: .1rem;
+    left: .6rem;
     bottom: 1rem;
     border: .02rem solid #FFFFFF;
     border-radius: .05rem;
     padding: .5rem;
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
 }
 .p5 img{
     float: left;
@@ -741,8 +742,8 @@ ul{list-style: none}
 }
 
 .p5 .er img{
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 
