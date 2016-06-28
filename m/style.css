@@ -47,14 +47,22 @@ ul{list-style: none}
     animation: meRotate 2s linear infinite;
     -webkit-animation: meRotate 2s linear infinite;
 }
- @keyframes meRotate {
-     0%{
-         -webkit-transform: rotateZ(0deg);
-     }
-     100%{
-         -webkit-transform: rotateZ(360deg);
-     }
- }
+@keyframes meRotate {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+@-webkit-keyframes meRotate {
+    0%{
+     -webkit-transform: rotateZ(0deg);
+    }
+    100%{
+     -webkit-transform: rotateZ(360deg);
+    }
+}
  .p1 .whirl .photo{
      position: absolute;
      top:14%;
@@ -207,6 +215,7 @@ ul{list-style: none}
 }
 .p2 .skill1,.p2 .skill2,.p2 .skill3,.p2 .skill4{
     position: absolute;
+    margin-bottom: .4rem;
     width: 2.5rem;
     height: 3.5rem;
     line-height: 3.5rem;
@@ -223,7 +232,8 @@ ul{list-style: none}
     animation-fill-mode: backwards;
     -webkit-animation-fill-mode: backwards;
 }
-#p2 .skill2{transform-style: preserve-3d;
+#p2 .skill2{
+    /*transform-style: preserve-3d;*/
     animation-delay: .4s;
  }
 #p2 .skill3{
@@ -617,10 +627,10 @@ ul{list-style: none}
 }
 .p5 dl dt{
     position: absolute;
-    top:-1rem;
+    top:-1.2rem;
     left: -.8rem;
     border-bottom: .08rem solid #FFFFFF;
-    line-height: 1.5rem;
+    line-height: 1rem;
     width: 6rem;
     font-size: .32rem;
     font-weight: bold;
