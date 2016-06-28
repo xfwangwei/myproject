@@ -133,6 +133,15 @@ ul{list-style: none}
          opacity: 1;
      }
  }
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+    }
+    100% {
+        opacity: 1;
+    }
+}
  /*position animation*/
  @-webkit-keyframes slideInLeft {
      from {
@@ -215,7 +224,6 @@ ul{list-style: none}
 }
 .p2 .skill1,.p2 .skill2,.p2 .skill3,.p2 .skill4{
     position: absolute;
-    margin-bottom: .4rem;
     width: 2.5rem;
     height: 3.5rem;
     line-height: 3.5rem;
@@ -258,29 +266,29 @@ ul{list-style: none}
         -webkit-transform: rotateY(0deg) ;
     }
     45%{
-        transform:translateZ(1.2rem) rotateY(145deg);
+        -webkit-transform:translateZ(1.2rem) rotateY(145deg);
     }
     90%{
         -webkit-transform:translateZ(1.5rem) rotateY(360deg) ;
     }
 }
 .p2 .skill1{
-    top: 12%;
+    top: 10%;
     left: 7%;
     background: #ED5564;
 }
 .p2 .skill2{
-    top: 12%;
+    top: 10%;
     left: 55%;
     background: #A0D468;
 }
 .p2 .skill3{
-    top: 50%;
+    top: 55%;
     left: 7%;
     background: #AC92ED;
 }
 .p2 .skill4{
-    top: 50%;
+    top: 55%;
     left: 55%;
     background: #50C1E9;
 }
@@ -569,7 +577,7 @@ ul{list-style: none}
 .p4 .exp2{
     position:absolute;
     right: .8rem;
-    bottom: 4rem;
+    bottom: 3.5rem;
 }
 .p4 .exp2 img{
     float: right;
@@ -651,7 +659,7 @@ ul{list-style: none}
 }
 .p5 .phone{
     position: absolute;
-    top:1rem;
+    top:.2rem;
 }
 #p5 .phone{
     animation: swing 1s 6;
@@ -713,7 +721,7 @@ ul{list-style: none}
 
 .p5 .qq{
     position: absolute;
-    top:2.5rem;
+    top:1.5rem;
 }
 #p5 .qq{
     -webkit-animation: flash 1s 6;
