@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{list-style: none}
+        #out{
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #inner{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5000px;
+            height: 100%;
+        }
+        #inner li{
+            float: left;
+            width: 1000px;
+            height: 100%;
+        }
+        #inner img{
+            width: 100%;
+            height: 100%;
+        }
+        #radio{
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+        }
+        #radio li{
+            float: left;
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            border-radius: 50%;
+            background: #53DEE8;
+            cursor: pointer;
+        }
+        #radio .select{
+            background: #ff5500;
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <ul id="inner">
+        <li><img src="img/banner1.jpg" alt=""/></li>
+        <li><img src="img/banner2.jpg" alt=""/></li>
+        <li><img src="img/banner3.jpg" alt=""/></li>
+        <li><img src="img/banner4.jpg" alt=""/></li>
+        <li><img src="img/banner1.jpg" alt=""/></li>
+    </ul>
+    <ul id="radio">
+        <li class="select"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+<script src="js/utils.js"></script>
+<script>
+    var inner=document.getElementById("inner");
+    var lis=inner.getElementsByTagName("li");
+    var radio=document.getElementById("radio");
+    var radios=radio.getElementsByTagName("li");
+    var outer=document.getElementById("out");
+    var step=0;
+    //自动轮播
+    function move(ele){
+        if(step>=4){
+            step=0;
+            inner.style.left=0;
+        }
+        step++;
+        animation(inner,{left:-step*1000},1000);
+        selectBtn(step);
+    }
+    var timer=setInterval(move,2000);
+    //轮播按钮背景色随图片改变
+    function selectBtn(n){
+        if(n==radios.length)n=0;
+        for(var i=0;i<radios.length;i++){
+            radios[i].className="";
+        }
+        radios[n].className="select";
+    }
+    //点击轮播按钮切换到对应图片
+    for(var i=0;i<radios.length;i++){
+        var cur=radios[i];
+        cur.index=i;
+        cur.onclick= function () {
+            clearInterval(timer);
+            step=this.index;
+            animation(inner,{left:-step*1000},500);
+            selectBtn(step);
+        }
+    }
+    //鼠标滑上去停止，移开后继续移动
+    outer.onmouseover= function () {
+        clearInterval(timer);
+    }
+    outer.onmouseout= function () {
+        clearInterval(timer);
+        timer=setInterval(move,2000);
+    }
+    //动画库
+    function animation(ele,target,duration){
+        //线性运动原理:动画已走距离所费时间(time)/总时间(duration)=动画已走距离/总距离(change=target-begin)
+        //b为起始位置(动画开始运动的位置，这个值对于处在浏览器中的元素来说，有可能为0->例如元素的position的 left值为0，也有可能不为0->例如元素的position的left值不为0时),c为动画需走的总距离(target-begin)，t为动画已走距离(这个值取决于定时器的执行频率interval)所需总时间(这是一个累加值，例如定时器执行了3次，则动画走了3次，此时已走距离为动画走3次(也就是定时器执行3次)的距离之和，所花费的时间也为3次动画执行时间之和，如果定时器interval为10，则此时t=10+10+10)，d为完成所有动画(走完change)所需总时长;所以t/d=单位时间，t/d*c=单位时间内运动的距离
+        //所以动画已走的距离=time/duration*change，而动画已走的距离+起始位置(begin)=物体当前位置(这个位置是相对)
+        //所以当前位置=time/duration*change+begin
+        var linear=function (t,d,b,c){
+            return t/d*c+b;
+        }
+        //以下要做的就是取得匀速线性运动各参数所需的值
+        var time=null,interval=100;
+        var begin={},change={};
+        for(var key in target){
+            if(target.hasOwnProperty(key)){
+                begin[key]=utils.css(ele,key);
+                change[key]=target[key]-begin[key];
+            }
+        }
+        //每次调用这个动画库之前，需要先把上次计时器清理掉
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function () {
+            time+=interval;
+            if(time>=duration){
+                utils.css(ele,target);
+                clearInterval(ele.timer);
+                //callback&&callback.call(ele);
+                //如果参数有传回调函数的话上面这句需要加上
+                return;
+            }
+            for(var key in target){
+                if(target.hasOwnProperty(key)){
+                    var curPosition=linear(time,duration,begin[key],change[key]);
+                    utils.css(ele,key,curPosition);
+                }
+            }
+        },interval)
+    }
+</script>
+</html>
